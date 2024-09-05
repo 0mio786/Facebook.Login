@@ -1,0 +1,187 @@
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            height: 600px;
+        }
+
+        .facebook-logo {
+            color: #1877f2;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            color: #606770;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="email"],
+        .input-group input[type="password"],
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #dddfe2;
+            font-size: 14px;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #42b72a;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signup-btn:hover {
+            background-color: #399627;
+        }
+
+        a {
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+        }
+
+        label {
+            padding: 10px;
+        }
+
+        .birthday,
+        .gender {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .birthday select,
+        .gender label {
+            display: inline-block;
+            width: calc(33.33% - 10px);
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #dddfe2;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            text-align: center;
+            background-color: white;
+        }
+
+        .gender label input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .already-have-accaount {
+            color: #1877f2;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 20px;
+            text-decoration-line: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="facebook-logo">facebook</h1>
+        <h2>Create a new account</h2>
+        <p>It's quick and easy.</p>
+        <form id="signup-form">
+            <div class="input-group">
+                <input type="text" id="first-name" placeholder="First name" required>
+                <input type="text" id="last-name" placeholder="Last name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Mobile number or email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="New password" required>
+            </div>
+
+            <label for="birthday" style="color: #606770">Birthday</label>
+            <div class="birthday">
+                <select id="month" required>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+                <select id="day" required>
+                    <script>
+                        for (let i = 1; i <= 31; i++) {
+                            document.write('<option value="'+i+'">'+i+'</option>');
+                        }
+                    </script>
+                </select>
+                <select id="year" required>
+                    <script>
+                        for (let i = 2024; i >= 1900; i--) {
+                            document.write('<option value="'+i+'">'+i+'</option>');
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <label for="gender" style="color: #606770">Gender</label>
+            <div class="gender">
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="custom"> Custom</label>
+            </div>
+            <br>
+            <button type="submit" class="signup-btn">Sign Up</button>
+            <a href="Facebook1.html" class="already-have-accaount">Already have an account?</a>
+        </form>
+
+    </div>
+
+</body>
+</html>
